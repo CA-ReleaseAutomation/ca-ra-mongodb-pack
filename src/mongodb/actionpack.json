@@ -1,0 +1,16 @@
+{
+   "ActionPack" : {
+      "name" : "MongoDB",
+      "category" : "MongoDB",
+      "description" : "Integration with MongoDB, the NoSQL document store.",
+      "author" : "CA Technologies",
+      "dependencies" : "",
+      "platform" : "Windows and Linux",
+      "version" : "0.1 ",
+      "license" : "",
+      "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mongodb/mongo.jpg",
+      "lastModified" : "2014-11-09T20:18:26.342-08:00",
+      "tags" : [ ],
+      "packageName" : "mongodb"
+   }
+}

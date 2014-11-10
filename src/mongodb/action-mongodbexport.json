@@ -1,0 +1,129 @@
+{
+   "SCRIPTAction" : {
+      "actionPack" : {
+         "name" : "MongoDB",
+         "category" : "MongoDB",
+         "description" : "Integration with MongoDB, the NoSQL document store.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mongodb/mongo.jpg",
+         "lastModified" : "2014-11-09T20:18:26.342-08:00",
+         "tags" : [ ],
+         "packageName" : "mongodb"
+      },
+      "name" : "MongoDB - Export",
+      "description" : "Export a collection from the server.",
+      "inputParamList" : [ {
+         "name" : "Working Directory",
+         "type" : "String",
+         "description" : "The working directory for the MongoDB server.",
+         "required" : false,
+         "variableName" : "workingdirectory",
+         "arrayOption" : false
+      }, {
+         "name" : "Host",
+         "type" : "String",
+         "description" : "The host that the MongoDB server runs on.",
+         "required" : false,
+         "variableName" : "host",
+         "arrayOption" : false
+      }, {
+         "name" : "Port",
+         "type" : "Integer",
+         "description" : "The port that the MongoDB server runs on.",
+         "required" : false,
+         "defaultValue" : "27017",
+         "variableName" : "port",
+         "arrayOption" : false
+      }, {
+         "name" : "Username",
+         "type" : "String",
+         "description" : "The username to authenticate with the MongoDB server.",
+         "required" : false,
+         "variableName" : "username",
+         "arrayOption" : false
+      }, {
+         "name" : "Password",
+         "type" : "String",
+         "description" : "The password to authenticate with the MongoDB server.",
+         "required" : false,
+         "variableName" : "password",
+         "arrayOption" : false
+      }, {
+         "name" : "Database",
+         "type" : "String",
+         "description" : "The database to use.",
+         "required" : false,
+         "variableName" : "database",
+         "arrayOption" : false
+      }, {
+         "name" : "Collection",
+         "type" : "String",
+         "description" : "The collection in the database to use.",
+         "required" : false,
+         "variableName" : "collection",
+         "arrayOption" : false
+      }, {
+         "name" : "Out File",
+         "type" : "String",
+         "description" : "The output file.",
+         "required" : false,
+         "variableName" : "outfile",
+         "arrayOption" : false
+      }, {
+         "name" : "Query",
+         "type" : "String",
+         "description" : "The query to use on the MongoDB.",
+         "required" : false,
+         "variableName" : "query",
+         "arrayOption" : false
+      }, {
+         "name" : "Options",
+         "type" : "String",
+         "description" : "Options that will be included on the command issued to MongoDB.",
+         "required" : false,
+         "variableName" : "options",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "Execution Output",
+         "type" : "String",
+         "description" : "Standard out from the command execution.",
+         "filterValue" : "[\\s\\S]*",
+         "filterType" : "REGEX",
+         "variableName" : "executionoutput",
+         "source" : "standardOut",
+         "arrayOption" : false
+      } ],
+      "type" : "SCRIPT",
+      "complete" : true,
+      "lastModified" : "2014-11-09T21:02:10.524-08:00",
+      "className" : "MongoDBExport",
+      "packageName" : "com.ca.mongodb",
+      "shellType" : "DEFAULT_OS",
+      "scripts" : [ {
+         "content" : "mongoexport --host ${Host} --port ${Port} --username ${Username} --password ${Password} --collection ${Collection} --db ${Database} --query ${Query} --out ${Out File} ${Options}",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "${Working Directory}",
+         "name" : "MongoDBExport1415595730521.bat",
+         "osType" : "WINDOWS",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      }, {
+         "content" : "mongoexport --host ${Host} --port ${Port} --username ${Username} --password ${Password} --collection ${Collection} --db ${Database} --query ${Query} --out ${Out File} ${Options}",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "${Working Directory}",
+         "name" : "MongoDBExport1415595730523.sh",
+         "osType" : "LINUX",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      } ]
+   }
+}

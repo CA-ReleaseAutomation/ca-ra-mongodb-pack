@@ -1,0 +1,1 @@
+mongo ${Database} --host ${Host} --port ${Port} --username ${Username} --password ${Password} ${Options} --eval "${command}"

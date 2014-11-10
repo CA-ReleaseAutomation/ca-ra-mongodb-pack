@@ -1,0 +1,83 @@
+{
+   "RESTAction" : {
+      "actionPack" : {
+         "name" : "MongoDB",
+         "category" : "MongoDB",
+         "description" : "Integration with MongoDB, the NoSQL document store.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mongodb/mongo.jpg",
+         "lastModified" : "2014-11-09T20:18:26.342-08:00",
+         "tags" : [ ],
+         "packageName" : "mongodb"
+      },
+      "name" : "MongoDB - Monitor",
+      "category" : "",
+      "description" : "Check the RESTful interface to get a status on the MongoDB service. In order for the service to be available, the appropriate flag needs to be sent on startup.",
+      "inputParamList" : [ {
+         "name" : "Protocol",
+         "type" : "String",
+         "description" : "Protocol",
+         "required" : false,
+         "defaultValue" : "http",
+         "variableName" : "protocol",
+         "arrayOption" : false
+      }, {
+         "name" : "Host",
+         "type" : "String",
+         "description" : "Host",
+         "required" : false,
+         "defaultValue" : "localhost",
+         "variableName" : "host",
+         "arrayOption" : false
+      }, {
+         "name" : "Port",
+         "type" : "Integer",
+         "description" : "Port",
+         "required" : false,
+         "defaultValue" : "27017",
+         "variableName" : "port",
+         "arrayOption" : false
+      }, {
+         "name" : "user",
+         "type" : "String",
+         "required" : false,
+         "variableName" : "user",
+         "arrayOption" : false
+      }, {
+         "name" : "password",
+         "type" : "String",
+         "required" : false,
+         "variableName" : "password",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "Execution Output",
+         "type" : "String",
+         "description" : "Standard out from the command execution.",
+         "filterValue" : "[\\s\\S]*",
+         "filterType" : "REGEX",
+         "variableName" : "executionoutput",
+         "arrayOption" : false
+      } ],
+      "successMessage" : "Execution succeeded.",
+      "type" : "REST",
+      "complete" : true,
+      "lastModified" : "2014-11-09T21:02:10.608-08:00",
+      "className" : "MongoDBMonitor",
+      "packageName" : "com.ca.mongodb",
+      "requestURI" : "${Protocol}://${Host}:${Port}/serverStatus",
+      "requestMethod" : "GET",
+      "timeout" : 30,
+      "language" : "",
+      "bodyContent" : {
+         "contentType" : "",
+         "encoding" : "",
+         "rawRequest" : ""
+      },
+      "authentication" : [ "BASIC", "NONE" ]
+   }
+}

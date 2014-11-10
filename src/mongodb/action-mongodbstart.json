@@ -1,0 +1,90 @@
+{
+   "SCRIPTAction" : {
+      "actionPack" : {
+         "name" : "MongoDB",
+         "category" : "MongoDB",
+         "description" : "Integration with MongoDB, the NoSQL document store.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mongodb/mongo.jpg",
+         "lastModified" : "2014-11-09T20:18:26.342-08:00",
+         "tags" : [ ],
+         "packageName" : "mongodb"
+      },
+      "name" : "MongoDB - Start",
+      "description" : "Start the MongoDB server.",
+      "inputParamList" : [ {
+         "name" : "Working Directory",
+         "type" : "String",
+         "description" : "The working directory for the MongoDB server.",
+         "required" : false,
+         "variableName" : "workingdirectory",
+         "arrayOption" : false
+      }, {
+         "name" : "Port",
+         "type" : "Integer",
+         "description" : "The port that the MongoDB server runs on.",
+         "required" : false,
+         "defaultValue" : "27017",
+         "variableName" : "port",
+         "arrayOption" : false
+      }, {
+         "name" : "Database Path",
+         "type" : "String",
+         "description" : "The path to the MongoDB database.  Often on the command line this is included as the –dbpath argument.",
+         "required" : false,
+         "variableName" : "databasepath",
+         "arrayOption" : false
+      }, {
+         "name" : "Log Path",
+         "type" : "String",
+         "description" : "The path to the log file.",
+         "required" : false,
+         "variableName" : "logpath",
+         "arrayOption" : false
+      }, {
+         "name" : "Options",
+         "type" : "String",
+         "description" : "Options that will be included on the command issued to MongoDB.",
+         "required" : false,
+         "variableName" : "options",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "Execution Output",
+         "type" : "String",
+         "description" : "Standard out from the command execution.",
+         "filterValue" : "[\\s\\S]*",
+         "filterType" : "REGEX",
+         "variableName" : "executionoutput",
+         "source" : "standardOut",
+         "arrayOption" : false
+      } ],
+      "type" : "SCRIPT",
+      "complete" : true,
+      "lastModified" : "2014-11-09T21:02:10.782-08:00",
+      "className" : "MongoDBStart",
+      "packageName" : "com.ca.mongodb",
+      "shellType" : "DEFAULT_OS",
+      "scripts" : [ {
+         "content" : "mongod --dbpath ${Database Path} --logpath ${Log Path} --port ${Port} ${Options}",
+         "execDir" : "${Working Directory}",
+         "name" : "MongoDBStart1415595730777.bat",
+         "osType" : "WINDOWS",
+         "overwriteOutput" : true,
+         "timeout" : 30,
+         "waitForProcess" : false
+      }, {
+         "content" : "mongod --dbpath ${Database Path} --logpath ${Log Path} --port ${Port} ${Options}",
+         "execDir" : "${Working Directory}",
+         "name" : "MongoDBStart1415595730779.sh",
+         "osType" : "LINUX",
+         "overwriteOutput" : true,
+         "timeout" : 30,
+         "waitForProcess" : false
+      } ]
+   }
+}

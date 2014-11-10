@@ -1,0 +1,90 @@
+{
+   "RESTAction" : {
+      "actionPack" : {
+         "name" : "MongoDB",
+         "category" : "MongoDB",
+         "description" : "Integration with MongoDB, the NoSQL document store.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mongodb/mongo.jpg",
+         "lastModified" : "2014-11-09T20:18:26.342-08:00",
+         "tags" : [ ],
+         "packageName" : "mongodb"
+      },
+      "name" : "Mongo Monitor",
+      "description" : "Display server status",
+      "inputParamList" : [ {
+         "name" : "protocol",
+         "type" : "String",
+         "description" : "Protocol",
+         "required" : false,
+         "defaultValue" : "http",
+         "variableName" : "protocol",
+         "arrayOption" : false
+      }, {
+         "name" : "host",
+         "type" : "String",
+         "description" : "Host",
+         "required" : false,
+         "defaultValue" : "localhost",
+         "variableName" : "host",
+         "arrayOption" : false
+      }, {
+         "name" : "port",
+         "type" : "Integer",
+         "description" : "Port",
+         "required" : false,
+         "defaultValue" : "27017",
+         "variableName" : "port",
+         "arrayOption" : false
+      }, {
+         "name" : "user",
+         "type" : "String",
+         "required" : false,
+         "variableName" : "user",
+         "arrayOption" : false
+      }, {
+         "name" : "password",
+         "type" : "String",
+         "required" : false,
+         "variableName" : "password",
+         "arrayOption" : false
+      }, {
+         "name" : "Output File Location",
+         "type" : "String",
+         "description" : "Specifies the location to which the output of the RESTful command will be written.",
+         "required" : false,
+         "defaultValue" : "",
+         "variableName" : "outputfilelocation",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "output",
+         "type" : "String",
+         "filterValue" : "$",
+         "filterType" : "JSON",
+         "variableName" : "output",
+         "arrayOption" : false
+      } ],
+      "successMessage" : "Execution succeeded.",
+      "type" : "REST",
+      "complete" : true,
+      "lastModified" : "2014-11-09T21:02:10.94-08:00",
+      "className" : "MongoMonitor",
+      "packageName" : "com.ca.mongodb",
+      "requestURI" : "${protocol}://${host}:${port}/serverStatus",
+      "requestMethod" : "GET",
+      "timeout" : 30,
+      "contentType" : "",
+      "language" : "",
+      "bodyContent" : {
+         "contentType" : "",
+         "encoding" : "",
+         "rawRequest" : ""
+      },
+      "authentication" : [ "BASIC", "NONE" ]
+   }
+}

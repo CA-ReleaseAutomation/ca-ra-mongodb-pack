@@ -1,0 +1,1 @@
+mongod --dbpath ${Database Path} --logpath ${Log Path} --port ${Port} ${Options}
